@@ -6,36 +6,46 @@ import Home from "./pages/home";
 import CreatePost from "./pages/posts";
 import Profile from "./pages/profile";
 import MyPhotos from "./pages/myphotos";
+import ProtectedRoutes from "./components/ui/ProtectedRoutes";
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
-    path: "/home",
-    element: <Home />,
-    errorElement: <Error />,
+    element: <ProtectedRoutes />,
+    children: [
+      {
+        path: "/home",
+        element: <Home />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/post",
+        element: <CreatePost />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/myphotos",
+        element: <MyPhotos />,
+        errorElement: <Error />,
+      },
+    ],
   },
-  {
-    path: "/post",
-    element: <CreatePost />,
-    errorElement: <Error />,
-  },
-  {
-    path: "/profile",
-    element: <Profile />,
-    errorElement: <Error />,
-  },
+
   {
     path: "/login",
     element: <Login />,
     errorElement: <Error />,
   },
-  {
-    path: "/myphotos",
-    element: <MyPhotos />,
-    errorElement: <Error />,
-  },
+
   {
     path: "/signup",
     element: <Signup />,
     errorElement: <Error />,
   },
 ]);
+
+export default router;
