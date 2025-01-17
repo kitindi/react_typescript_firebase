@@ -1,4 +1,5 @@
-import { Navigate, useLocation, Outlet } from "react-router-dom";
+
+import { Navigate, useLocation, Outlet  } from "react-router-dom";
 
 const ProtectedRoutes = () => {
   const isAuth: boolean = false;
