@@ -1,11 +1,11 @@
-
-import { Navigate, useLocation, Outlet  } from "react-router-dom";
+import { useUserAuth } from "@/context/UserAuthContext";
+import { Navigate, useLocation, Outlet } from "react-router-dom";
 
 const ProtectedRoutes = () => {
-  const isAuth: boolean = false;
+  const { user } = useUserAuth();
   const location = useLocation();
 
-  return isAuth ? <Outlet /> : <Navigate to="/login" state={{ from: location }} />;
+  return user ? <Outlet /> : <Navigate to="/login" state={{ from: location }} />;
 };
 
 export default ProtectedRoutes;
