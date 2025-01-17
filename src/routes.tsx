@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Login from "./pages/login";
 import Error from "./pages/error/error";
-import Signup from "./pages/signup";
+import SignUp from "./pages/signup";
 import Home from "./pages/home";
 import CreatePost from "./pages/posts";
 import Profile from "./pages/profile";
 import MyPhotos from "./pages/myphotos";
-import ProtectedRoutes from "./components/ui/ProtectedRoutes";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
 
   {
     path: "/signup",
-    element: <Signup />,
+    element: <SignUp />,
     errorElement: <Error />,
   },
 ]);
