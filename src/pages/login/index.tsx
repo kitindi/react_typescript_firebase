@@ -48,8 +48,8 @@ const Login: React.FunctionComponent<ISignUpProps> = () => {
     <Card className="w-full h-screen flex justify-center items-center bg-[#ffffff]">
       <form action="" onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl text-center">Create an account</CardTitle>
-          <CardDescription className="text-center">Enter your email below to create your account</CardDescription>
+          <CardTitle className="text-2xl text-center">Welcome Back</CardTitle>
+          <CardDescription className="text-center">Enter your credentials below to access your account</CardDescription>
         </CardHeader>
 
         <CardContent className="grid gap-4">
